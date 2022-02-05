@@ -276,11 +276,11 @@ a {
 }
 
 .modal .icon-close {
-    position: relative;
-    top: 8px;
-    left: 8px;
-    transform: translate(-8px, -7px);
-    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
 }
 
 
@@ -795,8 +795,11 @@ a {
     height: auto;
 }
 
-.product__item:hover .product__wrap .product__description,
-.product__item:focus .product__wrap .product__description {
+.product__item:hover .product__wrap .product__description {
+    transform: translateY(-294px);
+}
+
+.product__wrap:focus {
     transform: translateY(-294px);
 }
 
