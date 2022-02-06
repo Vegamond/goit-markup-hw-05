@@ -265,6 +265,9 @@ a {
 }
 
 .modal-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     top: 8px;
     right: 8px;
@@ -274,9 +277,6 @@ a {
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 
