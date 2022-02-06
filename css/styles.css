@@ -761,7 +761,7 @@ a {
 
 .product__link:hover .product__description,
 .product__link:focus .product__description {
-    transform: translateY(0);
+    transform: translateY(-294px);
 }
 
 .product__title {
