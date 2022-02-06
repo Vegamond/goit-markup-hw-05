@@ -16,6 +16,8 @@
     --before-element-is: rgba(33, 150, 243, 1);
     --overlay: rgba(0, 0, 0, 0.2);
     --cards-overlay: rgba(33, 150, 243, 0.9);
+    --duration: 250ms;
+    --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -132,6 +134,7 @@ a {
     line-height: 1.2;
     letter-spacing: 0.02em;
     text-decoration: none;
+    transition: color var(--duration) var(--timing-function);
 }
 
 .menu__item {
@@ -145,7 +148,7 @@ a {
     left: 0;
     width: 100%;
     height: 4px;
-    border: 2px solid var(--before-element-is);
+    background-color: var(--before-element-is);
     border-radius: 2px;
 }
 
@@ -186,13 +189,12 @@ a {
     padding: 32px 0;
     display: flex;
     align-items: center;
+    transition: color var(--duration) var(--timing-function);
 }
 
 .header-contacts__link:hover,
 .header-contacts__link:focus {
     color: var(--accent-color);
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -256,7 +258,7 @@ a {
     height: 100%;
     z-index: 9;
     background-color: var(--overlay);
-    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform var(--duration) var(--timing-function), opacity var(--duration) var(--timing-function);
 }
 
 .hero .backdrop.is-hidden {
@@ -304,6 +306,7 @@ a {
     font-family: inherit;
     cursor: pointer;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    transition: background-color var(--duration) var(--timing-function);
 }
 
 .hero-btn:hover,
@@ -514,14 +517,18 @@ a {
 
 .social__icon___list {
     display: flex;
+    justify-content: center;
 }
 
 .social__link {
-    width: 44px;
-    height: 44px;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    color: var(--accent-color);
+    transition: color var(--duration) var(--timing-function), background-color var(--duration) var(--timing-function);
 }
 
 .social__item {
@@ -536,8 +543,6 @@ a {
 .social__link:hover,
 .social__link:focus {
     background-color: var(--accent-color);
-    border-radius: 50%;
-    cursor: pointer;
 }
 
 .social__link:hover .social__icon,
@@ -628,6 +633,7 @@ a {
     line-height: 16px;
     letter-spacing: 0.02em;
     text-decoration: none;
+    transition: var(--duration) var(--timing-function), opacity var(--duration) var(--timing-function);
 }
 
 .footer__contacts__link:hover,
@@ -671,6 +677,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: var(--duration) var(--timing-function), opacity var(--duration) var(--timing-function);
 }
 
 .join__link:hover,
@@ -711,6 +718,7 @@ a {
     color: var(--title-text-color);
     font-family: inherit;
     cursor: pointer;
+    transition: var(--duration) var(--timing-function), opacity var(--duration) var(--timing-function);
 }
 
 .portfolio-btn:hover,
@@ -774,8 +782,7 @@ a {
 
 .product__description {
     background-color: var(--cards-overlay);
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: var(--duration) var(--timing-function), opacity var(--duration) var(--timing-function);
 }
 
 .product__description {
@@ -843,33 +850,32 @@ a {
 
 .clients-list {
     display: flex;
+    justify-content: space-between;
 }
 
-.clients-list .clients__link {
+.clients__link {
+    display: flex;
     width: 170px;
     height: 92px;
     border: 1px solid var(--primary-icon-color);
     border-radius: 4px;
-    display: flex;
     justify-content: center;
     align-items: center;
+    color: var(--accent-color);
+    transition: color var(--duration) var(--timing-function), border var(--duration) var(--timing-function);
 }
 
-.clients__link:hover .clients__logo,
-.clients__link:focus .clients__logo {
+.clients__link:hover,
+.clients__link:focus {
     fill: var(--accent-color);
 }
 
 .clients__link:hover,
 .clients__link:focus {
-    border-color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
 }
 
 .clients__logo {
-    width: 106px;
-    height: 60px;
-}
-
-.clients__logo {
-    fill: var(--primary-icon-color);
+    fill: currentColor;
 }
